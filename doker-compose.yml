@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  backend:
+    container_name: corpsys-backend
+    build:
+      context: .
+    ports:
+      - 8000:8000
+    volumes:
+      - ./back:/back
+      - ./data/web/static:/data/web/static/
+      - ./data/web/media:/data/web/media/
+    env_file:
+      - .env
+    depends_on:
+      - databse
+
+  databse:
+    container_name: psql
+    image: postgres:13-alpine
+    volumes:
+      - ./data/postgres/data:/var/lib/postgresql/data/
+    env_file:
+      - .env
+
+  # frontend:
+  #   container_name: corpsys-frontend
+  #   ports:
+  #     - 3000:3000
+  #   depends_on:
+  #     - backend
