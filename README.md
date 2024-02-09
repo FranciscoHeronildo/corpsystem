@@ -17,10 +17,9 @@ $ cd corpsystem
 $ cd back
 ```
 
-**Execute o Servidor:**
+**Execute:**
 
 ```bash
-$ python3 manage.py runserver
 $ python3 manage.py runserver
 ```
 
