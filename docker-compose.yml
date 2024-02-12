@@ -14,9 +14,9 @@ services:
     env_file:
       - .env
     depends_on:
-      - databse
+      - database
 
-  databse:
+  database:
     container_name: corpsys-psql
     image: postgres:13-alpine
     volumes:
@@ -26,7 +26,11 @@ services:
 
   # frontend:
   #   container_name: corpsys-frontend
+  #   build:
+  #     context: .
   #   ports:
-  #     - 3000:3000
+  #     - 5173:3000
+  #   volumes:
+  #     - ./frontend:/app
   #   depends_on:
   #     - backend

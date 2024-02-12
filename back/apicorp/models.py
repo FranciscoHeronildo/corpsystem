@@ -2,18 +2,18 @@ from django.db import models
 
 
 class Cliente(models.Model):
-    nome = models.CharField(max_length=100)
+    nome = models.CharField(max_length=100, default='')
 
 
 class Produto(models.Model):
-    nome = models.CharField(max_length=100)
+    nome = models.CharField(max_length=100, default='')
 
 
 class GrupoProduto(models.Model):
-    nome = models.CharField(max_length=100)
+    nome = models.CharField(max_length=100, default='')
 
 class Vendedor(models.Model):
-    nome = models.CharField(max_length=100)
+    nome = models.CharField(max_length=100, default='')
     
 class Venda(models.Model):
     cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
