@@ -18,6 +18,7 @@ EXPOSE 8000
 # RUN executa comandos em um shell dentro do container para construir a imagem. 
 RUN python -m venv /venv && \
   /venv/bin/pip install --upgrade pip && \
+  /venv/bin/pip install djangorestframework && \
   /venv/bin/pip install -r /back/requirements.txt && \
   adduser --disabled-password --no-create-home duser && \
   mkdir -p /data/web/static && \
